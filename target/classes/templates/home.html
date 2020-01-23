@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login page</title>
+</head>
+<body>
+<h1>Login page</h1>
+<table>
+    <thead>
+    <tr>
+        <th> Job Description </th>
+        <th> Job Title </th>
+        <th> Last Application Date </th>
+        <th> Number Hire </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${jobs.isEmpty()}">
+        <td colspan="2"> No Job Available </td>
+    </tr>
+    <tr th:each="jobListingDto : ${jobs}">
+        <td><span th:text="${jobListingDto.getDescription()}"> Job Description </span></td>
+        <td><span th:text="   ${jobListingDto.getTitle()}"> Job Title </span></td>
+        <td><span th:text="${jobListingDto.getLastApplicationDate()}"> Last Application Date </span></td>
+        <td><span th:text="${jobListingDto.getNumberHire()}"> Number Hire </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

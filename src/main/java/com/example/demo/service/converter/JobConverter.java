@@ -11,8 +11,8 @@ public class JobConverter {
     public static JobListingDto converter(JobListing jobListing){
         JobListingDto jobListingDto = new JobListingDto();
 
-        jobListingDto.setJobDescription(jobListing.getJobDescription());
-        jobListingDto.setJobTitle(jobListing.getJobTitle());
+        jobListingDto.setDescription(jobListing.getDescription());
+        jobListingDto.setTitle(jobListing.getTitle());
         jobListingDto.setLastApplicationDate(jobListing.getLastApplicationDate());
         jobListingDto.setNumberHire(jobListing.getNumberHire());
 
@@ -21,9 +21,9 @@ public class JobConverter {
 
     public static JobListing converter(JobListingDto jobListingDto){
         JobListing jobListing = new JobListing();
-        jobListing.setJobDescription(jobListingDto.getJobDescription());
+        jobListing.setDescription(jobListingDto.getDescription());
         jobListing.setLastApplicationDate(jobListingDto.getLastApplicationDate());
-        jobListing.setJobTitle(jobListingDto.getJobTitle());
+        jobListing.setTitle(jobListingDto.getTitle());
         jobListing.setNumberHire(jobListingDto.getNumberHire());
 
         return jobListing;
@@ -37,8 +37,8 @@ public class JobConverter {
 
             jobListingDto.setNumberHire(jobs.getNumberHire());
             jobListingDto.setLastApplicationDate(jobs.getLastApplicationDate());
-            jobListingDto.setJobTitle(jobs.getJobTitle());
-            jobListingDto.setJobDescription(jobs.getJobDescription());
+            jobListingDto.setTitle(jobs.getTitle());
+            jobListingDto.setDescription(jobs.getDescription());
 
             jobListingDtoList.add(jobListingDto);
         }

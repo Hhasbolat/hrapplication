@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequestMapping(path = "/api/")
+@RequestMapping(path = "/home")
 public class JobController {
 
     private JobService jobService;
@@ -19,12 +18,12 @@ public class JobController {
         this.jobService = jobService;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, path = "/addJob")
     public JobListingDto addJob (@RequestBody JobListingDto jobListingDto){
         return jobService.addJob(jobListingDto);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, path = "/listJob")
     public List<JobListingDto> listJob(){
         return jobService.listJob();
     }

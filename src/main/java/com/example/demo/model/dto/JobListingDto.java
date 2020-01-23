@@ -1,11 +1,10 @@
 package com.example.demo.model.dto;
 
-
 public class JobListingDto {
 
     private Integer id;
-    private String jobTitle;
-    private String jobDescription;
+    private String title;
+    private String description;
     private String numberHire;
     private String lastApplicationDate;
 
@@ -16,20 +15,20 @@ public class JobListingDto {
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getJobTitle() {
-        return jobTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getJobDescription() {
-        return jobDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setJobDescription(String jobDescription) {
-        this.jobDescription = jobDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getNumberHire() {

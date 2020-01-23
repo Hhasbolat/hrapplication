@@ -3,6 +3,7 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "job_listing")
 public class JobListing {
 
     @Id
@@ -10,10 +11,10 @@ public class JobListing {
     private Integer id;
 
     @Column
-    private String jobTitle;
+    private String title;
 
     @Column
-    private String jobDescription;
+    private String description;
 
     @Column
     private String numberHire;
@@ -30,20 +31,20 @@ public class JobListing {
         this.id = id;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setTitle(String jobTitle) {
+        this.title = jobTitle;
     }
 
-    public String getJobDescription() {
-        return jobDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setJobDescription(String jobDescription) {
-        this.jobDescription = jobDescription;
+    public void setDescription(String jobDescription) {
+        this.description = jobDescription;
     }
 
     public String getNumberHire() {
