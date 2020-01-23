@@ -1,0 +1,24 @@
+<form action="#" th:action="@{/save}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <fieldset>
+        <input type="submit" id="submitButton" th:value="Save">
+        <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
+        <table>
+            <thead>
+            <tr>
+                <th> Job Description </th>
+                <th> Job Title </th>
+                <th> Last Application Date </th>
+                <th> Number Hire </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="text" th:field="*{job.title}" /></td>
+                <td><input type="text" th:field="*{job.description}" /></td>
+                <td><input type="date" th:field="*{job.lastApplicationDate}" /></td>
+                <td><input type="number" th:field="*{job.numberHire}" /></td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+</form>

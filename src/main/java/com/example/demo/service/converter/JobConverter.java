@@ -21,6 +21,7 @@ public class JobConverter {
 
     public static JobListing converter(JobListingDto jobListingDto){
         JobListing jobListing = new JobListing();
+
         jobListing.setDescription(jobListingDto.getDescription());
         jobListing.setLastApplicationDate(jobListingDto.getLastApplicationDate());
         jobListing.setTitle(jobListingDto.getTitle());

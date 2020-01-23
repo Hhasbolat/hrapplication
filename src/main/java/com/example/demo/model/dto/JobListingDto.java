@@ -8,7 +8,7 @@ public class JobListingDto {
     private String numberHire;
     private String lastApplicationDate;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

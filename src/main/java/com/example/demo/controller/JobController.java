@@ -2,14 +2,12 @@ package com.example.demo.controller;
 
 import com.example.demo.model.dto.JobListingDto;
 import com.example.demo.service.JobService;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(path = "/home")
+@RestController
+@RequestMapping(path = "/api/job")
 public class JobController {
 
     private JobService jobService;
@@ -18,12 +16,12 @@ public class JobController {
         this.jobService = jobService;
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/addJob")
+    @PostMapping
     public JobListingDto addJob (@RequestBody JobListingDto jobListingDto){
         return jobService.addJob(jobListingDto);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/listJob")
+    @GetMapping
     public List<JobListingDto> listJob(){
         return jobService.listJob();
     }
