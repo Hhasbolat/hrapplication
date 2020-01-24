@@ -33,13 +33,14 @@ public class JobConverter {
     public static List<JobListingDto> converter(List<JobListing> jobListing){
         List<JobListingDto> jobListingDtoList = new ArrayList<>();
 
-        for (JobListing jobs : jobListing){
+        for (JobListing job : jobListing){
             JobListingDto jobListingDto = new JobListingDto();
 
-            jobListingDto.setNumberHire(jobs.getNumberHire());
-            jobListingDto.setLastApplicationDate(jobs.getLastApplicationDate());
-            jobListingDto.setTitle(jobs.getTitle());
-            jobListingDto.setDescription(jobs.getDescription());
+            jobListingDto.setId(job.getId());
+            jobListingDto.setNumberHire(job.getNumberHire());
+            jobListingDto.setLastApplicationDate(job.getLastApplicationDate());
+            jobListingDto.setTitle(job.getTitle());
+            jobListingDto.setDescription(job.getDescription());
 
             jobListingDtoList.add(jobListingDto);
         }

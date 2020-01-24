@@ -10,4 +10,11 @@ public interface JobService {
 
      List<JobListingDto> listJob();
 
+     void deleteJob (Integer id);
+
+
+
+
+
+
 }

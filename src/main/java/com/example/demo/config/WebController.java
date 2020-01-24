@@ -4,9 +4,9 @@ import com.example.demo.model.dto.JobListingDto;
 import com.example.demo.service.JobService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.InvocationTargetException;
 
 
 @Controller
@@ -22,7 +22,7 @@ public class WebController {
 
         return "home";
     }
-    @GetMapping(path = "/")
+    @GetMapping(path = "/listJob")
     public String list(Model model) {
         model.addAttribute("jobs",jobService.listJob());
 
@@ -35,11 +35,17 @@ public class WebController {
 
         return "createJobsForm";
     }
+
     @PostMapping("/save")
-    public String saveBooks(@ModelAttribute JobListingDto form, Model model) {
-        jobService.addJob(form);
+    public String saveBooks(@ModelAttribute JobListingDto jobListingDto, Model model){
+        jobService.addJob(jobListingDto);
         model.addAttribute("books", jobService.listJob());
 
-        return "redirect:/";
+        return "redirect:/home";
+    }
+    @RequestMapping("/api/jobs/{id}")
+    public String listing(@PathVariable Integer id){
+        jobService.deleteJob(id);
+        return "redirect:/listJob";
     }
 }

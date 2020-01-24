@@ -20,9 +20,10 @@
         <td><span th:text="${jobListingDto.getTitle()}"> Job Title </span></td>
         <td><span th:text="${jobListingDto.getLastApplicationDate()}"> Last Application Date </span></td>
         <td><span th:text="${jobListingDto.getNumberHire()}"> Number Hire </span></td>
+        <!-- <td><button th:action=""> Apply </button></td> -->
+        <td><a th:href="@{'/api/jobs/' + ${jobListingDto.getId()}}"> Delete </a></td>
     </tr>
     </tbody>
-
 </table>
 </body>
 </html>

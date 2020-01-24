@@ -4,6 +4,7 @@ import com.example.demo.model.dto.JobListingDto;
 import com.example.demo.service.JobService;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @RestController
@@ -26,4 +27,12 @@ public class JobController {
         return jobService.listJob();
     }
 
+    @DeleteMapping(path = "/{id}")
+    public void deleteById(@PathVariable Integer id) {
+        jobService.deleteJob(id);
+    }
+    @GetMapping (path = "/apply")
+    public void apply(){
+        jobService.apply();
+    }
 }

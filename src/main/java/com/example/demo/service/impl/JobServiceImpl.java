@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.error.OrderNotFoundException;
 import com.example.demo.model.JobListing;
 import com.example.demo.model.dto.JobListingDto;
 import com.example.demo.repo.JobRepository;
@@ -19,7 +20,7 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    public JobListingDto addJob(JobListingDto job) {
+    public JobListingDto addJob(JobListingDto job)   {
         JobListing user = JobConverter.converter(job);
         JobListing save = jobRepository.save(user);
         JobListingDto userDto = JobConverter.converter(save);
@@ -32,6 +33,11 @@ public class JobServiceImpl implements JobService {
         List<JobListingDto> dtoList = JobConverter.converter(jobListingList);
 
         return dtoList;
+    }
+
+    @Override
+    public void deleteJob(Integer id) {
+        jobRepository.deleteById(id);
     }
 
 }
