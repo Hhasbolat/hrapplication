@@ -31,8 +31,4 @@ public class JobController {
     public void deleteById(@PathVariable Integer id) {
         jobService.deleteJob(id);
     }
-    @GetMapping (path = "/apply")
-    public void apply(){
-        jobService.apply();
-    }
 }
